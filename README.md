@@ -1,6 +1,6 @@
 # ENVOY
 
-**Live demo:** https://psview-agent-test.vercel.app
+**Live demo:** https://envoy-flax.vercel.app
 **Repo:** https://github.com/lavneethora/envoy
 
 An outbound recruiting agent that **reasons** — not a prompt wrapper.
