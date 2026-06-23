@@ -7,7 +7,7 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Envoy — Autonomous outbound that reasons",
+  title: "Envoy: Autonomous outbound that reasons",
   description:
     "Configure a recruiting agent with a personality. Watch it reason. Simulate replies. PSVIEW founding-engineer technical test.",
 };

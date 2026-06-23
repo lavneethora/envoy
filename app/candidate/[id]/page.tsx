@@ -203,8 +203,8 @@ export default function CandidatePage({ params }: { params: Promise<{ id: string
         appendStep({
           kind: "critique",
           title: critiqueData.critique.shouldRevise
-            ? `Revised — ${critiqueData.critique.summary}`
-            : `Shipped as-is — ${critiqueData.critique.summary}`,
+            ? `Revised, ${critiqueData.critique.summary}`
+            : `Shipped as-is, ${critiqueData.critique.summary}`,
           body:
             critiqueData.critique.issues.length === 0
               ? "No issues found. Voice + specificity check passed."
@@ -331,13 +331,13 @@ export default function CandidatePage({ params }: { params: Promise<{ id: string
               Candidate signals
             </h3>
             <p className="text-sm text-zinc-300 leading-relaxed">
-              {candidate.profile.signals || "—"}
+              {candidate.profile.signals || "-"}
             </p>
             <h3 className="text-xs uppercase tracking-wide text-zinc-500 mb-2 mt-4">
               Background
             </h3>
             <p className="text-sm text-zinc-400 leading-relaxed">
-              {candidate.profile.background || "—"}
+              {candidate.profile.background || "-"}
             </p>
           </div>
         </div>
@@ -393,7 +393,7 @@ export default function CandidatePage({ params }: { params: Promise<{ id: string
                 onChange={(e) => setReplyDraft(e.target.value)}
                 placeholder={
                   lastAgentMsg
-                    ? `Reply as if you're ${candidate.profile.name}…\n\nExamples:\n• "Thanks but I'm not looking right now"\n• "Sounds interesting — what's the comp band?"\n• "I'm flattered but I just joined my current role 3 months ago"`
+                    ? `Reply as if you're ${candidate.profile.name}…\n\nExamples:\n• "Thanks but I'm not looking right now"\n• "Sounds interesting, what's the comp band?"\n• "I'm flattered but I just joined my current role 3 months ago"`
                     : "Type a candidate reply…"
                 }
                 rows={3}

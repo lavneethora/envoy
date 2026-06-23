@@ -7,7 +7,7 @@ const FEATURES = [
     n: "01",
     title: "Personality, synthesised",
     body:
-      "Structured traits — formality, warmth, directness, technical depth, humor — derived from company context and injected into every decision.",
+      "Structured traits (formality, warmth, directness, technical depth, humor) derived from company context and injected into every decision.",
   },
   {
     n: "02",
@@ -19,7 +19,7 @@ const FEATURES = [
     n: "03",
     title: "Visible reasoning",
     body:
-      "Every reply triggers ANALYZE → DECIDE → DRAFT → CRITIQUE. You see the agent think — and revise itself when it slips.",
+      "Every reply triggers ANALYZE → DECIDE → DRAFT → CRITIQUE. You see the agent think, and revise itself when it slips.",
   },
 ];
 
@@ -54,7 +54,7 @@ export default function Home() {
               <p className="mt-6 text-lg text-zinc-400 max-w-xl leading-relaxed">
                 Feed it a company. It synthesises a personality. It plans a sequence. It
                 reads candidate replies, classifies them, decides a next action, drafts a
-                response, critiques itself — all in front of you.
+                response, critiques itself, all in front of you.
               </p>
 
               <div className="mt-10 flex flex-wrap items-center gap-3">

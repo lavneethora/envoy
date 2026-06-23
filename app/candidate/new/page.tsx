@@ -22,7 +22,7 @@ const DEMO_CANDIDATES: { label: string; profile: CandidateProfile }[] = [
       background:
         "Joined Linear in 2021 as ~employee #20. Has shipped Linear Insights and most of the GraphQL gateway. Previously 4 years at Stripe on internal tooling. Strong TS + Rust.",
       signals:
-        "Liked a tweet of yours about LLM agents being 'mostly state machines'. Has been quiet on LinkedIn for ~6 months — possible itch.",
+        "Liked a tweet of yours about LLM agents being 'mostly state machines'. Has been quiet on LinkedIn for ~6 months, possible itch.",
     },
   },
   {
@@ -44,7 +44,7 @@ const DEMO_CANDIDATES: { label: string; profile: CandidateProfile }[] = [
       background:
         "PhD ETH Zurich, statistical physics. 3 years at WorldQuant on macro factor models. Co-authored a 2023 paper on regime-switching alpha decay. Originally from Lugano, fluent German.",
       signals:
-        "Cited our founder's 2019 paper twice in his thesis. Recently posted on Twitter that he's reading Mandelbrot again — usually a signal someone's bored.",
+        "Cited our founder's 2019 paper twice in his thesis. Recently posted on Twitter that he's reading Mandelbrot again, usually a signal someone's bored.",
     },
   },
 ];
@@ -171,7 +171,7 @@ export default function NewCandidatePage() {
           />
         </Field>
         <Field
-          label="Signals — why now, why them"
+          label="Signals: why now, why them"
           hint="Anything specific. The agent will reference these."
         >
           <textarea

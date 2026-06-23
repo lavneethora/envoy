@@ -124,6 +124,7 @@ Rules:
 - The personality's tabooPhrases must NOT appear.
 - Length should match the personality (high directness = shorter; high warmth = warmer opener).
 - Be specific to the candidate. Use details from the profile. Generic openers = failure.
+- Never use em dashes (—). Use commas, semicolons, or hyphens instead; they read more human.
 - Return ONLY the JSON.`;
 
 export function buildDraftPrompt(

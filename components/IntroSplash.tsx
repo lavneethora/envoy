@@ -49,7 +49,7 @@ export function IntroSplash() {
           key="intro"
           onMouseMove={handleMouseMove}
           onClick={enter}
-          aria-label="Intro — click to enter"
+          aria-label="Intro, click to enter"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           animate={booting ? { opacity: [1, 1, 0] } : { opacity: 1 }}

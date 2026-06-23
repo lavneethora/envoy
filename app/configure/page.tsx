@@ -9,13 +9,13 @@ const PSVIEW_DEMO: CompanyContext = {
   name: "PSVIEW",
   oneLiner: "Autonomous AI agents that engage candidates on behalf of companies.",
   description:
-    "We build agents — not prompt wrappers — that reason and act on their own to source, engage and qualify candidates. Founder-led, small team, technical roots. Customers are scaling startups who hate the recruiting status quo.",
+    "We build agents, not prompt wrappers, that reason and act on their own to source, engage and qualify candidates. Founder-led, small team, technical roots. Customers are scaling startups who hate the recruiting status quo.",
   culture:
     "Builder energy. Bias to ship. We don't write decks, we ship demos. Direct feedback, no corporate softening, very dry humor. We respect people who think hard and call things by their real names.",
   targetProfile:
     "Founding-engineer profile: strong full-stack, has shipped real product end-to-end, comfortable with LLMs and agentic systems, prefers ambiguous high-leverage work over well-defined tickets. Bonus: has built something a bit weird.",
   tonePreference:
-    "Sharp, irreverent, no marketing voice. Should sound like a founder messaging a friend who happens to be an engineer — not like Greenhouse.",
+    "Sharp, irreverent, no marketing voice. Should sound like a founder messaging a friend who happens to be an engineer, not like Greenhouse.",
 };
 
 const BAR_DEMO: CompanyContext = {
@@ -23,7 +23,7 @@ const BAR_DEMO: CompanyContext = {
   oneLiner:
     "Berlin techno bar known for 14-hour weekend sets and a very particular crowd.",
   description:
-    "Independent, owner-operated, no investor money. 8 years in Friedrichshain. We're hiring head bartender — the person who runs the bar from 11pm to 8am on weekends.",
+    "Independent, owner-operated, no investor money. 8 years in Friedrichshain. We're hiring head bartender, the person who runs the bar from 11pm to 8am on weekends.",
   culture:
     "Family vibes behind the bar. We don't care about hospitality CVs from chain hotels. We care that you remember regulars by their drinks and don't lose your shit at 4am when a stag party walks in.",
   targetProfile:
@@ -40,7 +40,7 @@ const QUANT_DEMO: CompanyContext = {
   culture:
     "Cerebral, precise, calm. No open-plan, no slack channels for memes. We read papers in book club every Wednesday. We hire people who reason from first principles and dislike consensus thinking.",
   targetProfile:
-    "PhD in maths/physics/CS, published at least one paper, ideally has touched real markets even briefly (KDB+, real PnL exposure). We don't care about prior finance experience — we care about depth of statistical thinking.",
+    "PhD in maths/physics/CS, published at least one paper, ideally has touched real markets even briefly (KDB+, real PnL exposure). We don't care about prior finance experience; we care about depth of statistical thinking.",
   tonePreference:
     "Restrained, intellectually serious. Show that we've read their paper. No buzzwords, no urgency theatre, no 'amazing opportunity'.",
 };
@@ -86,7 +86,7 @@ export default function ConfigurePage() {
         <div className="text-xs font-mono text-emerald-400 mb-2">STEP 1 / 3</div>
         <h1 className="text-3xl font-semibold tracking-tight">Configure your agent</h1>
         <p className="mt-2 text-zinc-400 text-sm leading-relaxed">
-          The agent will synthesise its own personality from this context — a name, a
+          The agent will synthesise its own personality from this context: a name, a
           voice, signature moves, taboo phrases. Be specific. Generic input → generic agent.
         </p>
       </div>
@@ -119,7 +119,7 @@ export default function ConfigurePage() {
             placeholder="e.g. PSVIEW"
           />
         </Field>
-        <Field label="One-liner — what they do">
+        <Field label="One-liner, what they do">
           <input
             type="text"
             value={form.oneLiner}
