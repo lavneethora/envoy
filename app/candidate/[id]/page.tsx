@@ -267,7 +267,7 @@ export default function CandidatePage({ params }: { params: Promise<{ id: string
   const lastAgentMsg = [...candidate.messages].reverse().find((m) => m.from === "agent");
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-8">
+    <div className="max-w-6xl mx-auto px-6 py-8">
       <div className="mb-4 flex items-baseline justify-between flex-wrap gap-2">
         <div>
           <div className="flex items-baseline gap-3">
@@ -297,7 +297,7 @@ export default function CandidatePage({ params }: { params: Promise<{ id: string
 
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-6">
         {/* LEFT — strategy + profile */}
-        <div className="space-y-4">
+        <div className="space-y-4 min-w-0">
           {candidate.strategy && (
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
               <h3 className="text-xs uppercase tracking-wide text-zinc-500 mb-2">
@@ -343,7 +343,7 @@ export default function CandidatePage({ params }: { params: Promise<{ id: string
         </div>
 
         {/* RIGHT — conversation + reasoning */}
-        <div className="space-y-4">
+        <div className="space-y-4 min-w-0">
           {/* Messages */}
           <div className="rounded-xl border border-zinc-800 bg-zinc-950/60 overflow-hidden">
             <div className="px-4 py-2.5 border-b border-zinc-800 flex items-center justify-between">
@@ -457,7 +457,7 @@ function MessageBubble({ m }: { m: Message }) {
   return (
     <div className={`flex ${isAgent ? "" : "justify-end"}`}>
       <div
-        className={`max-w-[88%] rounded-lg px-3.5 py-2.5 text-sm whitespace-pre-wrap ${
+        className={`max-w-[88%] rounded-lg px-3.5 py-2.5 text-sm whitespace-pre-wrap break-words ${
           isAgent
             ? "bg-emerald-950/40 border border-emerald-900/40 text-zinc-100"
             : "bg-zinc-800/80 border border-zinc-700 text-zinc-100"
