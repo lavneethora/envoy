@@ -278,7 +278,11 @@ export default function CandidatePage({ params }: { params: Promise<{ id: string
           </div>
           <p className="text-sm text-zinc-400 mt-1">
             {candidate.profile.role} · intent:{" "}
-            <span className="text-zinc-300">{INTENT_LABELS[candidate.intent]}</span>
+            <span className="text-zinc-300">
+              {candidate.intent === "other"
+                ? candidate.customIntent
+                : INTENT_LABELS[candidate.intent]}
+            </span>
           </p>
         </div>
         <Link

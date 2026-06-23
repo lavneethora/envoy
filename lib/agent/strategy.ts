@@ -11,7 +11,7 @@ export type OutreachIntent =
   | "schedule_intro_call"
   | "gauge_interest"
   | "invite_to_event"
-  | "referral_ask";
+  | "other";
 
 export type OutreachTouch = {
   index: number;
@@ -60,7 +60,7 @@ Rules:
 export function buildStrategyUserPrompt(
   personality: PersonalityCard,
   candidate: CandidateProfile,
-  intent: OutreachIntent,
+  intentText: string,
 ): string {
   return `AGENT PERSONALITY:
 Name: ${personality.agentName}
@@ -78,7 +78,7 @@ Current role: ${candidate.role}
 Background: ${candidate.background}
 Signals (why they might be a fit / what we noticed): ${candidate.signals}
 
-INTENT: ${intent}
+INTENT: ${intentText}
 
 Design the sequence. JSON only.`;
 }
@@ -87,5 +87,5 @@ export const INTENT_LABELS: Record<OutreachIntent, string> = {
   schedule_intro_call: "Schedule a 15-min intro call",
   gauge_interest: "Gauge interest (no specific ask)",
   invite_to_event: "Invite to event / dinner",
-  referral_ask: "Ask for a referral",
+  other: "Other (write your own)",
 };

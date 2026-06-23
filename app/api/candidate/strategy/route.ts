@@ -3,6 +3,7 @@ import { anthropic, extractJSON, MODEL } from "@/lib/anthropic";
 import {
   STRATEGY_SYSTEM_PROMPT,
   buildStrategyUserPrompt,
+  INTENT_LABELS,
   type CandidateProfile,
   type OutreachIntent,
   type OutreachStrategy,
@@ -16,6 +17,7 @@ type Body = {
   personality: PersonalityCard;
   candidate: CandidateProfile;
   intent: OutreachIntent;
+  customIntent?: string;
 };
 
 export async function POST(req: Request) {
@@ -25,6 +27,11 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Missing fields." }, { status: 400 });
     }
 
+    const intentText =
+      body.intent === "other"
+        ? body.customIntent?.trim() || "reach out with a custom goal"
+        : INTENT_LABELS[body.intent];
+
     const message = await anthropic.messages.create({
       model: MODEL,
       max_tokens: 2048,
@@ -33,7 +40,7 @@ export async function POST(req: Request) {
       messages: [
         {
           role: "user",
-          content: buildStrategyUserPrompt(body.personality, body.candidate, body.intent),
+          content: buildStrategyUserPrompt(body.personality, body.candidate, intentText),
         },
       ],
     });

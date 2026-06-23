@@ -53,7 +53,7 @@ const INTENTS: OutreachIntent[] = [
   "schedule_intro_call",
   "gauge_interest",
   "invite_to_event",
-  "referral_ask",
+  "other",
 ];
 
 export default function NewCandidatePage() {
@@ -63,6 +63,7 @@ export default function NewCandidatePage() {
 
   const [profile, setProfile] = useState<CandidateProfile>(DEMO_CANDIDATES[0].profile);
   const [intent, setIntent] = useState<OutreachIntent>("schedule_intro_call");
+  const [customIntent, setCustomIntent] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -92,7 +93,7 @@ export default function NewCandidatePage() {
       const res = await fetch("/api/candidate/strategy", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ personality, candidate: profile, intent }),
+        body: JSON.stringify({ personality, candidate: profile, intent, customIntent }),
       });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
@@ -104,6 +105,7 @@ export default function NewCandidatePage() {
         id,
         profile,
         intent,
+        customIntent: intent === "other" ? customIntent.trim() : undefined,
         strategy,
         state: "NOT_CONTACTED",
         stateHistory: [{ state: "NOT_CONTACTED", at: Date.now() }],
@@ -205,6 +207,16 @@ export default function NewCandidatePage() {
               </label>
             ))}
           </div>
+          {intent === "other" && (
+            <input
+              type="text"
+              value={customIntent}
+              onChange={(e) => setCustomIntent(e.target.value)}
+              placeholder="Describe the goal, e.g. invite to a paid trial project, or re-engage a past applicant"
+              className={`${inputClass} mt-2`}
+              autoFocus
+            />
+          )}
         </Field>
 
         {error && (
@@ -216,7 +228,7 @@ export default function NewCandidatePage() {
         <div className="flex items-center gap-3 pt-3">
           <button
             type="submit"
-            disabled={loading}
+            disabled={loading || (intent === "other" && !customIntent.trim())}
             className="inline-flex items-center gap-2 h-11 px-5 rounded-md bg-emerald-500 text-zinc-950 text-sm font-medium hover:bg-emerald-400 disabled:opacity-50 transition-colors"
           >
             {loading ? (

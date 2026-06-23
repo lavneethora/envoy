@@ -35,6 +35,7 @@ export type Candidate = {
   id: string;
   profile: CandidateProfile;
   intent: OutreachIntent;
+  customIntent?: string;
   strategy?: OutreachStrategy;
   state: CandidateState;
   stateHistory: { state: CandidateState; at: number }[];
