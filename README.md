@@ -57,6 +57,12 @@ Concretely:
 - **Visible reasoning trace.** Every reasoning loop renders step-by-step in the UI with
   the underlying classification, decision, and critique JSON exposed. You can see why an
   objection led to `change_angle` and not `disqualify`.
+- **Grounded, not hallucinated.** The agent only states facts present in the company
+  context. It won't invent compensation, dates, or internal details, and won't promise
+  to send proprietary materials; if a candidate asks for something it doesn't have, it
+  defers to a human instead of making it up, and the critique step strips any invented
+  specifics that slip through. Knowing the boundary of what it knows is itself a reasoning
+  signal.
 
 ## Stack & choices
 

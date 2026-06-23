@@ -125,6 +125,8 @@ Rules:
 - Length should match the personality (high directness = shorter; high warmth = warmer opener).
 - Be specific to the candidate. Use details from the profile. Generic openers = failure.
 - Never use em dashes (—). Use commas, semicolons, or hyphens instead; they read more human.
+- GROUND every claim in the provided company context and candidate profile. Do NOT invent specifics that were not given: no compensation figures or bands, no dates, no internal metrics or failure cases, no named clients, no proprietary system/code details, and never offer to send proprietary materials (code, internal docs).
+- If the candidate asks for something the context does not contain (e.g. exact comp, visa/legal specifics, a founder intro), do not fabricate it. Acknowledge it briefly and say a human from the team will follow up with those specifics.
 - Return ONLY the JSON.`;
 
 export function buildDraftPrompt(
@@ -188,6 +190,7 @@ What to check:
 3. Is the draft generic — could it be sent to any candidate? (high if yes)
 4. Does the draft match the trait calibration? E.g. directness=9 but the opener hedges for 3 sentences = mismatch.
 5. Does the draft mention the candidate by something specific from their profile/signals?
+6. Does the draft invent specifics that are NOT in the company context or candidate profile — compensation figures/bands, dates, internal metrics or failure cases, named clients, proprietary system/code details, or a promise to send proprietary materials? This is a hallucinated commitment. (HIGH severity — rewrite to remove the invented detail, or replace it with "a human from the team will follow up on specifics".)
 
 If shouldRevise=true: rewrite the body to fix issues while preserving the message's intent. Keep length similar unless the issue is verbosity.
 
