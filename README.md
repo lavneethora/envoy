@@ -1,10 +1,11 @@
-# PSVIEW Agent
+# ENVOY
 
 **Live demo:** https://psview-agent-test.vercel.app
-**Repo:** https://github.com/lavneethora/psview-agent
+**Repo:** https://github.com/lavneethora/envoy
 
-An outbound recruiting agent that **reasons** — not a prompt wrapper. Built as the PSVIEW
-founding-engineer technical test.
+An outbound recruiting agent that **reasons** — not a prompt wrapper.
+
+> _This project was built for **PSVIEW — Engineering Intern technical round**._
 
 > Feed it a company. It synthesises a personality. It plans a sequence. It reads candidate
 > replies, classifies them, decides a next action, drafts a response, critiques itself —
@@ -78,8 +79,8 @@ Trade-offs I'd revisit with more time:
 ## Run it locally
 
 ```bash
-git clone https://github.com/lavneethora/psview-agent.git
-cd psview-agent
+git clone https://github.com/lavneethora/envoy.git
+cd envoy
 npm install
 cp .env.example .env.local
 # edit .env.local — add your ANTHROPIC_API_KEY
@@ -151,7 +152,3 @@ lib/
 Deployed on Vercel from the `main` branch. `ANTHROPIC_API_KEY` configured as a Vercel
 environment variable. Build is `npm run build` — TypeScript check + static optimization
 for marketing pages, with all `/api/*` routes running on Node serverless functions.
-
----
-
-Built in ~18 hours by Lavneet Hora for PSVIEW.
